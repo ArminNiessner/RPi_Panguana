@@ -1,6 +1,8 @@
 # RPi_Panguana
 Wifi Weather Station based on a Raspberry Pi Zero W
 
+A wifi weather station installed at the Biological Research Station Panguana, Peru. Live data can be viewed and downloaded at https://panguana-station.herokuapp.com/
+
 ## Parts
 
 * [Raspberry Pi Zero W](https://www.raspberrypi.org/products/raspberry-pi-zero-w/)
@@ -21,19 +23,19 @@ Wifi Weather Station based on a Raspberry Pi Zero W
 
 ## Libraries
 
-* os
+* [os](https://docs.python.org/2/library/os.html)
 
-* time
+* [time](https://docs.python.org/2/library/time.html)
 
-* threading
+* [threading](https://docs.python.org/2/library/threading.html)
 
-* datetime (datetime)
+* [datetime](https://docs.python.org/2/library/datetime.html)
 
-* bme280
+* bme280 (available in this repository and modified from [bme280](https://bitbucket.org/MattHawkinsUK/rpispy-misc/raw/master/python/bme280.py), see also this [tutorial](https://www.raspberrypi-spy.co.uk/2016/07/using-bme280-i2c-temperature-pressure-sensor-in-python/)
 
-* ftplip (FTP)
+* [ftplip](https://docs.python.org/2/library/ftplib.html#module-ftplib)
 
-* Rpi.GPIO
+* [Rpi.GPIO](https://pypi.org/project/RPi.GPIO/)
 
 * [ADCDifferentialPi](https://www.abelectronics.co.uk/kb/article/23/python-library-and-demos)
 
@@ -41,7 +43,7 @@ Wifi Weather Station based on a Raspberry Pi Zero W
 
 ## Raspbian setup
 
-* Download and install [ADCDifferentialPi library] (https://github.com/abelectronicsuk/ABElectronics_Python_Libraries)
+* Download and install [ADCDifferentialPi library](https://github.com/abelectronicsuk/ABElectronics_Python_Libraries)
 
 ```
 git clone https://github.com/abelectronicsuk/ABElectronics_Python_Libraries.git
@@ -62,6 +64,9 @@ or:
 ```
 pip3 install sht-sensor
 ```
+
+* Download and move bme280.py to the folder where pang_logger.py is located
+
 
 * execute python logging script at boot:
 
