@@ -17,7 +17,7 @@ A wifi weather station installed at the Biological Research Station Panguana, Pe
 
 * bme280.py
 
-* looger_script.py
+* logger_script.py
 
 * ftp_upload.py (optional)
 
