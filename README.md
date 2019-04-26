@@ -43,7 +43,7 @@ Wifi Weather Station based on a Raspberry Pi Zero W
 
 * Download and install [ADCDifferentialPi library] (https://github.com/abelectronicsuk/ABElectronics_Python_Libraries)
 
-    *   <git clone https://github.com/abelectronicsuk/ABElectronics_Python_Libraries.git>
+<git clone https://github.com/abelectronicsuk/ABElectronics_Python_Libraries.git>
 
     *   sudo python3 setup.py install
 
