@@ -37,13 +37,13 @@ Wifi Weather Station based on a Raspberry Pi Zero W
 
 * [ADCDifferentialPi](https://www.abelectronics.co.uk/kb/article/23/python-library-and-demos)
 
-* [sht_sensor] (https://pypi.org/project/sht-sensor/)
+* [sht_sensor](https://pypi.org/project/sht-sensor/)
 
 ## Raspbian setup
 
 * Download and install [ADCDifferentialPi library] (https://github.com/abelectronicsuk/ABElectronics_Python_Libraries)
 
-    *   git clone https://github.com/abelectronicsuk/ABElectronics_Python_Libraries.git
+    *   <git clone https://github.com/abelectronicsuk/ABElectronics_Python_Libraries.git>
 
     *   sudo python3 setup.py install
 
