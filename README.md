@@ -47,19 +47,68 @@ Wifi Weather Station based on a Raspberry Pi Zero W
 git clone https://github.com/abelectronicsuk/ABElectronics_Python_Libraries.git
 ```
 
-> sudo python3 setup.py install
+```
+sudo python3 setup.py install
+```
 
 or:
 
+```
 > sudo python3.5 -m pip3 install git+https://github.com/abelectronicsuk/ABElectronics_Python_Libraries.git
+```
 
 * Download and install [sht_sensor library](https://github.com/kizniche/sht-sensor/)
 
-    *   pip3 install sht-sensor
+```
+pip3 install sht-sensor
+```
 
 * execute python logging script at boot:
 
-    *   sudo nano /etc/rc.local
+```
+sudo nano /etc/rc.local
+```
 
-    * add the line: sudo python3 /home/pi/logger_script.py
-    
+add the line: 
+
+```
+sudo python3 /home/pi/logger_script.py
+```
+
+* reconnect to wifi every hour (just in case if the wifi network is down from time to time)
+
+```
+sudo nano /usr/local/bin/wifi_rebooter.sh
+
+    #!/bin/bash
+	
+	# The IP for the server you wish to ping (8.8.8.8 is a public Google 		DNS server)
+	SERVER=8.8.8.8
+
+	# Only send two pings, sending output to /dev/null
+	ping -c2 ${SERVER} > /dev/null
+
+	# If the return code from ping ($?) is not 0 (meaning there was an 		error)
+	if [ $? != 0 ]
+	then
+	    # Restart the wireless interface
+	    ifdown --force wlan0
+	    ifup wlan0
+	fi
+```
+
+```
+chmod +x /usr/local/bin/wifi_rebooter.sh
+```
+
+```
+sudo nano /etc/crontab
+```
+
+add the line:
+
+```
+30 *	* * *	root	/usr/local/bin/wifi_rebooter.sh
+```
+
+
